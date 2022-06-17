@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEST</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Тестовое задание Каналсервис</h1>
+    <h2>Total: {{ sum }}$</h2>
+
+    <div class="row">
+        <div class="column">
+            <table class="table">
+                <thead>
+                    <tr>
+                        {% for item in data %}
+                            <th>{{ item[0] }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(1, data[0]|length) %}
+                        <tr>
+                            {% for item in data %}
+                                <td>{{ item[i] }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="column">
+            <img src={{ url }} alt="Chart" height="auto" width="100%">
+        </div>
+    </div>
+</body>
+</html>
